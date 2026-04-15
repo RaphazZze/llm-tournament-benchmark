@@ -1,0 +1,50 @@
+# Study configuration
+# Bot names must match Poe bot handles exactly (case-sensitive)
+# See: https://poe.com/explore?category=Official
+
+prompt_file: prompt.md
+input_file: input_gitignore.txt  # rename to match your input file
+
+# How many times to query each model
+runs_per_model: 1
+
+# How many times the judge evaluates each matchup (for position bias control)
+judge_runs_per_matchup: 2
+
+# Judge configuration
+judge:
+  name: Claude-Opus-4.6 (medium)
+  bot_name: claude-opus-4.6
+  parameters:
+    enable_web_search: false
+    output_effort: medium
+
+# Parameters are bot-specific on Poe — each model defines its own.
+# Check the Poe UI for each bot to see available parameter names and values.
+# Common ones observed:
+#   reasoning_effort: low / medium / high    (GPT models)
+#   output_effort:    none / medium / high   (Claude models)
+#   thinking_level:   low / high             (Gemini models)
+#   enable_web_search: true / false
+#   verbosity:        (varies by bot)
+
+# Models to test — order determines tournament seeding
+models:
+  - name: GPT-5.4 (medium)
+    bot_name: gpt-5.4
+    parameters:
+      enable_web_search: false
+      reasoning_effort: medium
+
+  - name: Claude-Sonnet-4.6 (none)
+    bot_name: claude-sonnet-4.6
+    parameters:
+      enable_web_search: false
+      output_effort: none
+
+  # Add more models here
+  # - name: Gemini 3.1 Pro (low)
+  #   bot_name: gemini-3.1-pro
+  #   parameters:
+  #     enable_web_search: false
+  #     thinking_level: low

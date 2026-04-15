@@ -1,0 +1,13 @@
+# Sensitive/private input files
+*_gitignore.*
+*_gitignore
+
+# API keys and virtual environments
+.env
+.venv/
+
+# Tournament state (auto-deleted when complete)
+judge_state.json
+
+# macOS
+.DS_Store
